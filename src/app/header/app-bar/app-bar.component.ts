@@ -7,11 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AppBarComponent implements OnInit {
 
-  type = 'default';
-  prominent = false;
-  dense = false;
-
-  @Input() toggleDrawer: any;
+  shouldRun = true;
 
   constructor() { }
 

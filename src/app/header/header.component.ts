@@ -7,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  drawer: boolean = false;
-
-  toggleDrawer() : void {
-    this.drawer = !this.drawer;
-  }
 
   constructor() { }
 

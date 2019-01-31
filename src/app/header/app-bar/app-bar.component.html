@@ -1,19 +1,6 @@
-<div #viewport class="blox-snippet-page">
-  <header [mdcTopAppBar]="type" [viewport]="viewport" [fixedAdjust]="fixedAdjust"
-      [prominent]="prominent" [dense]="dense">
-    <div mdcTopAppBarRow>
-      <section mdcTopAppBarSection alignStart>
-        <a (click)="toggleDrawer()" href="javascript:void(0)" mdcTopAppBarNavIcon class="material-icons">menu</a>
-        <span mdcTopAppBarTitle>Toolbar</span>
-      </section>
-      <section mdcTopAppBarSection alignEnd>
-        <a href="javascript:void(0)" mdcTopAppBarAction class="material-icons" label="Download">file_download</a>
-        <a *ngIf="type !== 'short'" href="javascript:void(0)" mdcTopAppBarAction class="material-icons" label="Print this page">print</a>
-        <a *ngIf="type !== 'short'" href="javascript:void(0)" mdcTopAppBarAction class="material-icons" label="Bookmark this page">more_vert</a>
-      </section>
-    </div>
-  </header>
-  <main #fixedAdjust>
-    
-  </main>
-</div>
+<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+  <mat-sidenav-content>Main content</mat-sidenav-content>
+</mat-sidenav-container>
+
+<div *ngIf="!shouldRun">Please open on Stackblitz to see result</div>
