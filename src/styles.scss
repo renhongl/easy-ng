@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+// customize some theme variables, e.g.:
+$mdc-theme-primary: #6200ee;
+$mdc-theme-secondary: #018786;
+$mdc-theme-background: #fff;
+
+// import theming for all mdc components:
+@import "material-components-web/material-components-web";
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
