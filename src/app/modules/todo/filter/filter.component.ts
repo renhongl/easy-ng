@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'todo-filter',
+  selector: 'module-todo-filter',
   templateUrl: './filter.component.html',
   styleUrls: ['./filter.component.scss']
 })

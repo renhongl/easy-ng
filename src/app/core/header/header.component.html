@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    NG SDK
+
+
+    <span class="example-spacer"></span>
+
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon class="example-icon">favorite</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <a routerLink="/">
+          <mat-icon>dialpad</mat-icon>Home
+        </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="/todo">
+          <mat-icon>voicemail</mat-icon>Todo
+        </a>
+      </button>
+      <button mat-menu-item>
+        <a routerLink="/404">
+          <mat-icon>notifications_off</mat-icon>404
+        </a>
+      </button>
+    </mat-menu>
+
+
+  </mat-toolbar-row>
+</mat-toolbar>

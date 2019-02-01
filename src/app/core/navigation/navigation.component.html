@@ -1,0 +1,9 @@
+<button nz-button nzType="primary" (click)="open()">Open</button>
+<nz-drawer [nzClosable]="false" [nzVisible]="visible" nzPlacement="right" nzTitle="Basic Drawer" (nzOnClose)="close()">
+  <nav>
+    <a routerLink="/">Home</a>
+    <a routerLink="/todo">Todo</a>
+    <a routerLink="/404">404</a>
+  </nav>
+
+</nz-drawer>

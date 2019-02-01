@@ -1,31 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { TodoModule } from './todo/todo.module';
-import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Third party modules
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+
+
+//SDK modules
+import { CoreModule } from './core/core.module';
+import { RoutesModule } from './core/routes.module';
+import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
-import { HomeComponent } from './pages/home/home.component';
-import { TodoComponent } from './pages/todo/todo.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { HeaderModule } from './header/header.module';
-
-
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'todo',
-    component: TodoComponent
-  },
-  {
-    path: '404',
-    component: PageNotFoundComponent
-  }
-];
 
 @NgModule({
   declarations: [
@@ -34,10 +20,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    TodoModule,
+    NgZorroAntdModule,
+    CoreModule,
+    SharedModule,
     PagesModule,
-    RouterModule.forRoot(appRoutes),
-    HeaderModule
+    RoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

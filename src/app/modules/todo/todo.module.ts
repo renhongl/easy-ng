@@ -6,15 +6,17 @@ import { FilterComponent } from './filter/filter.component';
 import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
-  declarations: [TodoComponent, ListComponent, FilterComponent],
+  declarations: [
+    TodoComponent, 
+    ListComponent, 
+    FilterComponent
+  ],
   imports: [
     CommonModule,
     MatButtonModule
   ],
   exports: [
-    TodoComponent,
-    ListComponent, 
-    FilterComponent
+    TodoComponent
   ],
 })
 export class TodoModule { }
