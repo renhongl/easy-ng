@@ -5,15 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class CoreService {
 
-  visible: boolean = false;
+  open = false;
+  drawerType = 'temporary';
+  headerType = 'header';
 
-  open(): void {
-    this.visible = true;
+  toggleDrawer() {
+    this.open = !this.open;
   }
 
-  close(): void {
-    this.visible = false;
-  }
+  get toolbarSpacer() { return this.headerType === 'spacer'; }
+  get toolbarHeader() { return this.headerType === 'header'; }
 
   constructor() { }
 }

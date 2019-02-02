@@ -1,9 +1,32 @@
-<button nz-button nzType="primary" (click)="open()">Open</button>
-<nz-drawer [nzClosable]="false" [nzVisible]="visible" nzPlacement="right" nzTitle="Basic Drawer" (nzOnClose)="close()">
-  <nav>
-    <a routerLink="/">Home</a>
-    <a routerLink="/todo">Todo</a>
-    <a routerLink="/404">404</a>
-  </nav>
-
-</nz-drawer>
+<div #viewport class="blox-snippet-page">
+  <aside [mdcDrawerContainer]="coreService.drawerType" [(open)]="coreService.open">
+    <nav mdcDrawer>
+      <div mdcDrawerToolbarSpacer *ngIf="coreService.toolbarSpacer"></div>
+      <div mdcDrawerHeader *ngIf="coreService.toolbarHeader">
+        <div mdcDrawerHeaderContent>NG SDK</div>
+      </div>
+      <div mdcDrawerContent mdcListGroup>
+        <nav mdcList>
+          <a routerLink="" (click)="coreService.toggleDrawer()" mdcListItem>
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">home</i>Home
+          </a>
+          <a routerLink="/todo" (click)="coreService.toggleDrawer()" mdcListItem>
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">list</i>Todo
+          </a>
+          <a routerLink="/404" (click)="coreService.toggleDrawer()" mdcListItem>
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>404
+          </a>
+        </nav>
+        <hr mdcListDivider>
+        <nav mdcList>
+          <a routerLink="/todo" (click)="coreService.toggleDrawer()" mdcListItem>
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">list</i>Todo
+          </a>
+          <a routerLink="/404" (click)="coreService.toggleDrawer()" mdcListItem>
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>404
+          </a>
+        </nav>
+      </div>
+    </nav>
+  </aside>
+</div>

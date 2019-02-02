@@ -1,17 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 //Third party modules
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 
 //SDK modules
 import { CoreModule } from './core/core.module';
-import { RoutesModule } from './core/routes.module';
 import { SharedModule } from './shared/shared.module';
-import { PagesModule } from './pages/pages.module';
+import { AppRoutingModule } from './app-routing.module';
+
+//SDK pages
+// import { TodoModule } from './pages/todo/todo.module';
+// import { PageNotFoundModule } from './pages/page-not-found/page-not-found.module';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
@@ -23,8 +28,10 @@ import { PagesModule } from './pages/pages.module';
     NgZorroAntdModule,
     CoreModule,
     SharedModule,
-    PagesModule,
-    RoutesModule
+    AppRoutingModule,
+    // TodoModule,
+    // PageNotFoundModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

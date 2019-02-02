@@ -6,10 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { CoreService } from './core.service';
+import { FormsModule } from '@angular/forms'; // (optional)
+import { MaterialModule } from '@blox/material';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { CoreService } from './core.service';
     NgZorroAntdModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    MaterialModule,
   ],
   exports: [
     HeaderComponent,
