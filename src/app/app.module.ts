@@ -13,10 +13,13 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
-//SDK pages
-// import { TodoModule } from './pages/todo/todo.module';
-// import { PageNotFoundModule } from './pages/page-not-found/page-not-found.module';
-import { HomeModule } from './pages/home/home.module';
+//International
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { NZ_I18N, en_US } from 'ng-zorro-antd';
+registerLocaleData(en);
+
+
 
 @NgModule({
   declarations: [
@@ -29,11 +32,9 @@ import { HomeModule } from './pages/home/home.module';
     CoreModule,
     SharedModule,
     AppRoutingModule,
-    // TodoModule,
-    // PageNotFoundModule,
-    HomeModule
+    NgZorroAntdModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
