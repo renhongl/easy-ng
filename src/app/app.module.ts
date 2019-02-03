@@ -10,7 +10,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 //SDK modules
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 
 //International
@@ -30,7 +29,6 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     NgZorroAntdModule,
     CoreModule,
-    SharedModule,
     AppRoutingModule,
     NgZorroAntdModule
   ],
