@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbar-row">
+
+    <button mat-icon-button (click)="navControl.toggleDrawer()">
+      <mat-icon class="example-icon">menu</mat-icon>
+    </button>
+    NG SDK
+
+    <span class="example-spacer"></span>
+
+    <div *ngIf="token">
+      <button mat-icon-button [matMenuTriggerFor]="account">
+        <mat-icon class="example-icon">account_circle</mat-icon>
+      </button>
+      <mat-menu #account="matMenu">
+        <button mat-menu-item *ngFor="let item of authList">
+          <mat-icon>{{item.icon}}</mat-icon>{{item.displayName}}
+        </button>
+      </mat-menu>
+    </div>
+
+    <div *ngIf="!token">
+      <button mat-icon-button [matMenuTriggerFor]="account">
+        <mat-icon class="example-icon">account_circle</mat-icon>
+      </button>
+      <mat-menu #account="matMenu">
+        <a [routerLink]="item.path" *ngFor="let item of unAuthList">
+          <button mat-menu-item >
+            <mat-icon>{{item.icon}}</mat-icon>{{item.displayName}}
+          </button>
+        </a>
+      </mat-menu>
+    </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>

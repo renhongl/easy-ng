@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 
 
 const appRoutes: Routes = [
@@ -11,6 +12,10 @@ const appRoutes: Routes = [
   {
     path: 'todo',
     loadChildren: './pages/todo/todo.module#TodoModule'
+  },
+  {
+    path: 'login',
+    loadChildren: './pages/login/login.module#LoginModule'
   },
   {
     path: '**',
@@ -24,7 +29,8 @@ const appRoutes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true })//for debugging
+    RouterModule.forRoot(appRoutes),
+    CoreModule
   ],
   exports: [
     RouterModule

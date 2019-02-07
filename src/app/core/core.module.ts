@@ -1,22 +1,38 @@
+
+//modules
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { NavigationComponent } from './navigation/navigation.component';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
-import { CoreService } from './core.service';
-import { FormsModule } from '@angular/forms'; // (optional)
 import { MaterialModule } from '@blox/material';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule }    from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+
+
+//components
+import { HeaderComponent } from './components/header/header.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { MessageComponent } from './components/message/message.component';
+
+
+
+//services
+import { NavControlService } from './services/nav-control.service';
+import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    MessageComponent,
   ],
   imports: [
     CommonModule,
@@ -29,15 +45,23 @@ import { MaterialModule } from '@blox/material';
     RouterModule,
     FormsModule,
     MaterialModule,
+    HttpClientModule,
+    MatDialogModule,
+    MatInputModule
   ],
   exports: [
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    MessageComponent
   ],
   providers: [
     {
-      provide: 'core',
-      useClass: CoreService
+      provide: 'navControl',
+      useClass: NavControlService
+    },
+    {
+      provide: 'authService',
+      useClass: AuthService
     }
   ]
 })

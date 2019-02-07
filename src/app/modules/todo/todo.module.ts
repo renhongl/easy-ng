@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoComponent } from './todo.component';
 import { ListComponent } from './list/list.component';
 import { FilterComponent } from './filter/filter.component';
-import {MatButtonModule} from '@angular/material/button';
+import { SharedModule } from '../../shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -12,8 +12,7 @@ import {MatButtonModule} from '@angular/material/button';
     FilterComponent
   ],
   imports: [
-    CommonModule,
-    MatButtonModule
+    SharedModule
   ],
   exports: [
     TodoComponent

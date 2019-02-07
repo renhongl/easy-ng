@@ -1,28 +1,28 @@
 <div #viewport class="blox-snippet-page">
-  <aside [mdcDrawerContainer]="coreService.drawerType" [(open)]="coreService.open">
+  <aside [mdcDrawerContainer]="navControl.drawerType" [(open)]="navControl.open">
     <nav mdcDrawer>
-      <div mdcDrawerToolbarSpacer *ngIf="coreService.toolbarSpacer"></div>
-      <div mdcDrawerHeader *ngIf="coreService.toolbarHeader">
+      <div mdcDrawerToolbarSpacer *ngIf="navControl.toolbarSpacer"></div>
+      <div mdcDrawerHeader *ngIf="navControl.toolbarHeader">
         <div mdcDrawerHeaderContent>Pages</div>
       </div>
       <div mdcDrawerContent mdcListGroup>
         <nav mdcList>
-          <a routerLink="" (click)="coreService.toggleDrawer()" mdcListItem>
+          <a routerLink="" (click)="navControl.toggleDrawer()" mdcListItem>
             <i mdcListItemGraphic class="material-icons" aria-hidden="true">home</i>Home
           </a>
-          <a routerLink="/todo" (click)="coreService.toggleDrawer()" mdcListItem>
+          <a routerLink="/todo" (click)="navControl.toggleDrawer()" mdcListItem>
             <i mdcListItemGraphic class="material-icons" aria-hidden="true">list</i>Todo
           </a>
-          <a routerLink="/404" (click)="coreService.toggleDrawer()" mdcListItem>
+          <a routerLink="/404" (click)="navControl.toggleDrawer()" mdcListItem>
             <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>404
           </a>
         </nav>
         <hr mdcListDivider>
         <nav mdcList>
-          <a routerLink="/todo" (click)="coreService.toggleDrawer()" mdcListItem>
+          <a routerLink="/todo" (click)="navControl.toggleDrawer()" mdcListItem>
             <i mdcListItemGraphic class="material-icons" aria-hidden="true">list</i>Todo
           </a>
-          <a routerLink="/404" (click)="coreService.toggleDrawer()" mdcListItem>
+          <a routerLink="/404" (click)="navControl.toggleDrawer()" mdcListItem>
             <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>404
           </a>
         </nav>

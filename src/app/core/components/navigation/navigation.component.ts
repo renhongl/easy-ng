@@ -9,7 +9,7 @@ export class NavigationComponent implements OnInit {
 
   
 
-  constructor(@Inject('core') private coreService) { }
+  constructor(@Inject('navControl') private navControl) { }
 
   ngOnInit() {
   }

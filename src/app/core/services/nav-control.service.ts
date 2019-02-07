@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CoreService {
+export class NavControlService {
 
   open = false;
   drawerType = 'temporary';
   headerType = 'header';
+
+  loginDialog = false;
 
   toggleDrawer() {
     this.open = !this.open;
@@ -17,4 +19,6 @@ export class CoreService {
   get toolbarHeader() { return this.headerType === 'header'; }
 
   constructor() { }
+
+  
 }

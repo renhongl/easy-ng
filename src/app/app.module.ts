@@ -1,11 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-
-
-//Third party modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 
 //SDK modules
@@ -19,18 +15,15 @@ import { NZ_I18N, en_US } from 'ng-zorro-antd';
 registerLocaleData(en);
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    NgZorroAntdModule,
     CoreModule,
     AppRoutingModule,
-    NgZorroAntdModule
+    BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
