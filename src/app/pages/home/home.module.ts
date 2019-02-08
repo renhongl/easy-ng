@@ -3,7 +3,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HelloWorldModule } from '../../modules/hello-world/hello-world.module';
 import { SharedModule } from '../../shared/shared.module';
-
+import { CounterModule } from '../../modules/counter/counter.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     SharedModule,
     HomeRoutingModule,
-    HelloWorldModule
+    HelloWorldModule,
+    CounterModule
   ],
   exports: [
     HomeComponent

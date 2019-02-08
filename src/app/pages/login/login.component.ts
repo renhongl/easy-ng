@@ -1,44 +1,52 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { LoginResponse } from './login.model';
+import { Auth } from '../../shared/shared.model';
 import { Router } from '@angular/router';
-import { MessageComponent } from '../../core/components/message/message.component';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'page-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  providers: [MessageComponent]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  userName: string = 'default';
-  password: string = 'default';
+  userName: string = 'feng';
+  password: string = '112233';
 
   constructor(
     @Inject('authService') private authService, 
-    private route: Router,
-    private messageObj: MessageComponent
+    private route: Router
   ) { }
 
   ngOnInit() {
+    this.subscribeAuth();
   }
 
   login() {
-    this.authService.login(this.userName, this.password)
-      .subscribe((data: Array<LoginResponse>) => {
-        if (data.length > 0) {
-          window.sessionStorage.setItem('ng-sdk-token', data[0].token);
-          this.route.navigateByUrl('');
-          this.messageObj.createBasicNotification({
-            title: 'Login Successfully.',
-            content: 'You now can view all your component.'
-          });
-        } else {
-          alert('User name of password incorrect');
-        }
-      }, error => {
-        alert(error);
+    this.authService.authUser(this.userName, this.password);
+  }
+
+  subscribeAuth(): void{
+    return this.authService.getAuth().subscribe((auth: Auth)=> {
+      if (!auth.hasError) {
+        this.gotAuth(auth);
+      } else {
+        this.gotUnauth(auth);
       }
-      );
+    });
+  }
+
+  loginError(error: HttpErrorResponse) {
+    alert(error);
+  }
+
+  gotUnauth(auth: Auth) {
+    window.sessionStorage.removeItem('ng-sdk-token');
+    this.route.navigateByUrl(auth.redirectUrl);
+  }
+
+  gotAuth(auth: Auth) {
+    window.sessionStorage.setItem('ng-sdk-token', auth.user.id);
+    this.route.navigateByUrl(auth.redirectUrl);
   }
 }

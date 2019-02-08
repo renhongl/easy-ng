@@ -10,10 +10,10 @@
 
     <div *ngIf="token">
       <button mat-icon-button [matMenuTriggerFor]="account">
-        <mat-icon class="example-icon">account_circle</mat-icon>
+        <mat-icon class="example-icon">how_to_reg</mat-icon>
       </button>
       <mat-menu #account="matMenu">
-        <button mat-menu-item *ngFor="let item of authList">
+        <button mat-menu-item *ngFor="let item of authList" (click)="onClickAuth(item)">
           <mat-icon>{{item.icon}}</mat-icon>{{item.displayName}}
         </button>
       </mat-menu>
@@ -21,7 +21,7 @@
 
     <div *ngIf="!token">
       <button mat-icon-button [matMenuTriggerFor]="account">
-        <mat-icon class="example-icon">account_circle</mat-icon>
+        <mat-icon class="example-icon">perm_identity</mat-icon>
       </button>
       <mat-menu #account="matMenu">
         <a [routerLink]="item.path" *ngFor="let item of unAuthList">

@@ -26,6 +26,8 @@ import { MessageComponent } from './components/message/message.component';
 //services
 import { NavControlService } from './services/nav-control.service';
 import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 @NgModule({
@@ -62,6 +64,14 @@ import { AuthService } from './services/auth.service';
     {
       provide: 'authService',
       useClass: AuthService
+    },
+    {
+      provide: 'userService',
+      useClass: UserService
+    },
+    {
+      provide: 'authGuardService',
+      useClass: AuthGuardService
     }
   ]
 })

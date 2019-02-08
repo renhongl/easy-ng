@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { TodoComponent } from './todo.component';
+import { AuthGuardService } from '../../core/services/auth-guard.service';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: TodoComponent
+    component: TodoComponent,
+    canActivate: [AuthGuardService]
   }
 ]
 

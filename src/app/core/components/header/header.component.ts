@@ -1,4 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { Auth, Link } from '../../core.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'core-header',
@@ -7,7 +9,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  unAuthList: Array<object> = [
+  unAuthList: Array<Link> = [
     {
       icon: 'perm_identity',
       displayName: 'Login',
@@ -15,7 +17,7 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  authList: Array<object> = [
+  authList: Array<Link> = [
     {
       icon: 'how_to_reg',
       displayName: 'Profile',
@@ -33,11 +35,37 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  token = window.sessionStorage.getItem('ng-sdk-token');
+  token: string = window.sessionStorage.getItem('ng-sdk-token');
 
-  constructor(@Inject('navControl') private navControl, @Inject('authService') private authService) { }
+  constructor(
+    @Inject('authService') private authService, 
+    @Inject('navControl') private navControl,
+    private router: Router
+    ) { }
 
   ngOnInit() {
+    this.subscribeAuth();
   }
 
+  onClickAuth(link: Link): void {
+    switch(link.displayName) {
+      case 'Logout':
+        return this.authService.unAuth();
+      default:
+        break;
+    }
+  }
+ 
+  subscribeAuth(): void{
+    return this.authService.getAuth().subscribe((auth: Auth)=> {
+      if (!auth.hasError) {
+        this.token = auth.user.id;
+        window.sessionStorage.setItem('ng-sdk-token', auth.user.id);
+      } else {
+        this.token = '';
+        window.sessionStorage.removeItem('ng-sdk-token');
+      }
+      // this.router.navigateByUrl(auth.redirectUrl);
+    });
+  }
 }

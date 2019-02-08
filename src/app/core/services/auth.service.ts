@@ -1,25 +1,61 @@
 import { Injectable, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject, Observer } from 'rxjs';
+import { User, Auth } from '../core.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
 
-  private loginUrl = 'http://localhost:3000/user';
+  auth: Auth = {
+    hasError: true,
+    redirectUrl: '/login',
+    msg: 'Not logged in',
+    user: null,
+  }
+  subject: ReplaySubject<Auth> = new ReplaySubject<Auth>(1);
 
-  login(userName: string, password: string): Observable<boolean> {
-    return this.http.get<boolean>(`${this.loginUrl}?userName=${userName}&password=${password}`);
+  constructor(@Inject('userService') private userService) { }
+
+  authUser(userName: string, password: string): void {
+    this.userService.findUser(userName, password)
+      .subscribe((userList: Array<User>) => {
+        if (userList.length > 0) {
+          this.auth = {
+            ...this.auth,
+            hasError: false,
+            redirectUrl: '/',
+            msg: `${userList[0].userName} Login Successfully!`,
+            user: userList[0]
+          };
+          this.subject.next(this.auth);
+        } else {
+          this.auth = {
+            ...this.auth,
+            hasError: true,
+            redirectUrl: '/',
+            msg: 'User name or password incorrect.',
+            user: null
+          };
+          this.subject.next(this.auth);
+        }
+      }
+    );
   }
 
-  authed(): boolean {
-    return true;
+  unAuth(): void {
+    this.auth = {
+      ...this.auth,
+      hasError: true,
+      redirectUrl: '/login',
+      msg: 'Logged out',
+      user: null,
+    };
+    this.subject.next(this.auth);
   }
-
-  handleError() {
-
+ 
+  getAuth(): Observable<Auth> {
+    return this.subject.asObservable();
   }
-
-  constructor(private http: HttpClient) { }
+ 
 }
