@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Auth, Link } from '../../core.model';
+import { Auth, Link } from '../core.model';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'core-header',
+  selector: 'app-core-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
@@ -38,26 +38,26 @@ export class HeaderComponent implements OnInit {
   token: string = window.sessionStorage.getItem('ng-sdk-token');
 
   constructor(
-    @Inject('authService') private authService, 
+    @Inject('authService') private authService,
     @Inject('navControl') private navControl,
     private router: Router
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.subscribeAuth();
   }
 
   onClickAuth(link: Link): void {
-    switch(link.displayName) {
+    switch (link.displayName) {
       case 'Logout':
         return this.authService.unAuth();
       default:
         break;
     }
   }
- 
-  subscribeAuth(): void{
-    return this.authService.getAuth().subscribe((auth: Auth)=> {
+
+  subscribeAuth(): void {
+    return this.authService.getAuth().subscribe((auth: Auth) => {
       if (!auth.hasError) {
         this.token = auth.user.id;
         window.sessionStorage.setItem('ng-sdk-token', auth.user.id);

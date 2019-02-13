@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-  selector: 'page-login',
+  selector: 'app-page-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   password: string = '112233';
 
   constructor(
-    @Inject('authService') private authService, 
+    @Inject('authService') private authService,
     private route: Router
   ) { }
 
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
     this.authService.authUser(this.userName, this.password);
   }
 
-  subscribeAuth(): void{
-    return this.authService.getAuth().subscribe((auth: Auth)=> {
+  subscribeAuth(): void {
+    return this.authService.getAuth().subscribe((auth: Auth) => {
       if (!auth.hasError) {
         this.gotAuth(auth);
       } else {

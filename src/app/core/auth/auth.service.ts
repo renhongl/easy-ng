@@ -12,7 +12,7 @@ export class AuthService {
     redirectUrl: '/login',
     msg: 'Not logged in',
     user: null,
-  }
+  };
   subject: ReplaySubject<Auth> = new ReplaySubject<Auth>(1);
 
   constructor(@Inject('userService') private userService) { }
@@ -40,7 +40,7 @@ export class AuthService {
           this.subject.next(this.auth);
         }
       }
-    );
+      );
   }
 
   unAuth(): void {
@@ -53,9 +53,9 @@ export class AuthService {
     };
     this.subject.next(this.auth);
   }
- 
+
   getAuth(): Observable<Auth> {
     return this.subject.asObservable();
   }
- 
+
 }

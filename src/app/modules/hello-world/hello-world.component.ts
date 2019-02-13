@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'module-hello-world',
+  selector: 'app-module-hello-world',
   templateUrl: './hello-world.component.html',
   styleUrls: ['./hello-world.component.scss']
 })

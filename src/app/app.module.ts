@@ -4,11 +4,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
-//SDK modules
+// SDK modules
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
-//International
+// International
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { NZ_I18N, en_US } from 'ng-zorro-antd';

@@ -10,7 +10,7 @@ export class AuthGuardService implements CanActivate{
   constructor(private router: Router) { }
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    let token = window.sessionStorage.getItem('ng-sdk-token');
+    const token: string = window.sessionStorage.getItem('ng-sdk-token');
     if (token) {
       this.router.navigateByUrl(state.url);
       return true;
