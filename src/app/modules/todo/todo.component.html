@@ -1,9 +1,8 @@
+<div class="container">
 
-<app-module-todo-filter></app-module-todo-filter>
+    <app-module-todo-filter></app-module-todo-filter>
 
-<app-module-todo-list></app-module-todo-list>
+    <app-module-todo-list [todoList]="todoList"></app-module-todo-list>
 
-
-
-<!-- <div>state:</div>
-<div>{{state}}</div> -->
+    <div echarts [options]="chartOption" class="demo-chart" [loading]="true" [merge]="updateOptions"></div>
+</div>

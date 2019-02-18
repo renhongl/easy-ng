@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { HelloWorldModule } from '../../modules/hello-world/hello-world.module';
-import { SharedModule } from '../../shared/shared.module';
-import { CounterModule } from '../../modules/counter/counter.module';
+import { module as HelloWorldModule } from '../../modules/hello-world';
+import { module as SharedModule } from '../../shared';
 
 @NgModule({
   declarations: [
@@ -12,8 +11,7 @@ import { CounterModule } from '../../modules/counter/counter.module';
   imports: [
     SharedModule,
     HomeRoutingModule,
-    HelloWorldModule,
-    CounterModule
+    HelloWorldModule
   ],
   exports: [
     HomeComponent

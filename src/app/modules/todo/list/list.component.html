@@ -1,1 +1,10 @@
-<div>todo list</div>
+<div mdcListGroup>
+    <h3 mdcListGroupSubHeader>Todo List</h3>
+    <ul mdcList [dense]="dense" [nonInteractive]="!interactive">
+        <li mdcListItem *ngFor="let list of todoList">
+            <i mdcListItemGraphic class="material-icons">network_wifi</i>
+            {{list.text}}
+            <mat-checkbox></mat-checkbox>
+        </li>
+    </ul>
+</div>

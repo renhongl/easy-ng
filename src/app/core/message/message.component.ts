@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { NzNotificationService } from 'ng-zorro-antd';
-import { Message } from '../core.model';
-import { Auth } from '../core.model';
+import { Auth, Message } from '../core.model';
 
 @Component({
   selector: 'app-core-message',

@@ -17,17 +17,17 @@ import { MatInputModule } from '@angular/material/input';
 
 
 // components
-import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { MessageComponent } from './message/message.component';
+import { component as HeaderComponent } from './header';
+import { component as NavigationComponent } from './navigation';
+import { component as MessageComponent } from './message';
 
 
 
 // services
-import { NavControlService } from './nav-control/nav-control.service';
-import { AuthService } from './auth/auth.service';
-import { UserService } from './user/user.service';
-import { AuthGuardService } from './auth-guard/auth-guard.service';
+import { service as NavControlService } from './nav-control';
+import { service as AuthService } from './auth';
+import { service as UserService } from './user';
+import { service as AuthGuardService } from './auth-guard';
 
 
 @NgModule({

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { TodoComponent } from './todo.component';
 import { TodoRoutingModule } from './todo-routing.module';
-import { TodoModule as Todo } from '../../modules/todo/todo.module';
-import { SharedModule } from '../../shared/shared.module';
+import { module as Todo } from '../../modules/todo';
+import { module as SharedModule } from '../../shared';
 
 
 @NgModule({

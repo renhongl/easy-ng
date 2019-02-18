@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { TodoComponent } from './todo.component';
 import { ListComponent } from './list/list.component';
 import { FilterComponent } from './filter/filter.component';
-import { SharedModule } from '../../shared/shared.module';
-import { REDUCER_NAME } from './todo.constants';
-import { todoReducer } from './todo.reducer';
-import { StoreModule } from '@ngrx/store';
+import { module as SharedModule } from '../../shared';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { TodoService } from './todo.service';
 
 @NgModule({
   declarations: [
@@ -15,10 +15,17 @@ import { StoreModule } from '@ngrx/store';
   ],
   imports: [
     SharedModule,
-    StoreModule.forRoot({[REDUCER_NAME]: todoReducer})
+    MatCheckboxModule,
+    NgxEchartsModule
   ],
   exports: [
     TodoComponent
   ],
+  providers: [
+    {
+      provide: 'todoService',
+      useClass: TodoService
+    }
+  ]
 })
 export class TodoModule { }
