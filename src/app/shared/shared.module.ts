@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MaterialModule } from '@blox/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NgZorroAntdModule,
     MatInputModule,
     MaterialModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    NgxEchartsModule
   ],
   exports: [
     CommonModule,
@@ -29,7 +33,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NgZorroAntdModule,
     MatInputModule,
     MaterialModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    NgxEchartsModule
   ]
 })
 export class SharedModule { }

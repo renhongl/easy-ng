@@ -29,3 +29,5 @@ export interface Link {
     displayName: string;
     path: string;
 }
+
+export const userUrl = 'http://localhost:5000/user';

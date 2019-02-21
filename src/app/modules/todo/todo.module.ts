@@ -3,8 +3,6 @@ import { TodoComponent } from './todo.component';
 import { ListComponent } from './list/list.component';
 import { FilterComponent } from './filter/filter.component';
 import { module as SharedModule } from '../../shared';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NgxEchartsModule } from 'ngx-echarts';
 import { TodoService } from './todo.service';
 
 @NgModule({
@@ -14,9 +12,7 @@ import { TodoService } from './todo.service';
     FilterComponent
   ],
   imports: [
-    SharedModule,
-    MatCheckboxModule,
-    NgxEchartsModule
+    SharedModule
   ],
   exports: [
     TodoComponent

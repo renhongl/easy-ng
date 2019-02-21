@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Todo, ChartData } from './todo.constants';
+import { Todo, defaultOption } from './todo.constants';
 import { EChartOption } from 'echarts';
 
 
@@ -12,34 +12,8 @@ export class TodoComponent implements OnInit {
 
   todoList: Array<Todo> = [];
 
-
-  chartOption: EChartOption = {
-    xAxis: {
-      type: 'category',
-      data: []
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [{
-      data: [],
-      type: 'line'
-    }]
-  };
-
-  updateOptions: EChartOption = {
-    xAxis: {
-      type: 'category',
-      data: []
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [{
-      data: [],
-      type: 'line'
-    }]
-  };
+  chartOption: EChartOption = {};
+  updateOptions: EChartOption = {};
 
   constructor(@Inject('todoService') private todoService) {
   }

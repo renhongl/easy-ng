@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { User } from '../core.model';
+import { User, userUrl } from '../core.constants';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private userUrl = 'http://localhost:3000/user';
+  private userUrl = userUrl;
 
   constructor(private http: HttpClient) { }
 

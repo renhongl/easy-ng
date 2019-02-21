@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Auth, Link } from '../core.model';
+import { Auth, Link } from '../core.constants';
 import { Router } from '@angular/router';
 
 @Component({

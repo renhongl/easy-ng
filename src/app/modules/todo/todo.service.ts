@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Todo, ChartData } from './todo.constants';
+import { Todo, ChartData, todoUrl, chartUrl } from './todo.constants';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TodoService {
 
-  private todoUrl = 'http://localhost:3000/todo';
-  private chartUrl = 'http://localhost:3000/chart';
+  private todoUrl = todoUrl;
+  private chartUrl = chartUrl;
 
   constructor(private http: HttpClient) { }
 
