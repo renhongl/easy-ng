@@ -18,7 +18,7 @@
 
 1. 基本结构：头部模块，左侧导航，主区域布局
 1. 路由: 实现多页面，实现路由模块化，实现懒加载路由
-1. 组件库支持：Angular Material[文档](how-to-use-material-comp.md), Ant Design, Blox Material
+1. 组件库支持：Angular Material[文档](how-to-use-material-comp.md), Ant Design[文档](how-to-use-antd-comp), Blox Material
 1. 使用page模块描述路由对应的组件
 1. 使用modules开发公用可配置模块
 1. 支持国际化：实现多语言
