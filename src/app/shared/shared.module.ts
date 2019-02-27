@@ -11,6 +11,7 @@ import { MaterialModule } from '@blox/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
     MaterialModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    LeafletModule.forRoot()
   ],
   exports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
     MaterialModule,
     MatFormFieldModule,
     MatCheckboxModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    LeafletModule
   ]
 })
 export class SharedModule { }

@@ -7,23 +7,14 @@
       </div>
       <div mdcDrawerContent mdcListGroup>
         <nav mdcList>
-          <a routerLink="" (click)="navControl.toggleDrawer()" mdcListItem>
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">home</i>Home
-          </a>
-          <a routerLink="/todo" (click)="navControl.toggleDrawer()" mdcListItem>
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">list</i>Todo
-          </a>
-          <a routerLink="/404" (click)="navControl.toggleDrawer()" mdcListItem>
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>404
+          <a [routerLink]="item.url" (click)="navControl.toggleDrawer()" mdcListItem *ngFor="let item of favoriteNav">
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">{{item.icon}}</i>{{item.name}}
           </a>
         </nav>
         <hr mdcListDivider>
         <nav mdcList>
-          <a routerLink="/todo" (click)="navControl.toggleDrawer()" mdcListItem>
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">list</i>Todo
-          </a>
-          <a routerLink="/404" (click)="navControl.toggleDrawer()" mdcListItem>
-            <i mdcListItemGraphic class="material-icons" aria-hidden="true">drafts</i>404
+          <a [routerLink]="item.url" (click)="navControl.toggleDrawer()" mdcListItem *ngFor="let item of secondaryNav">
+            <i mdcListItemGraphic class="material-icons" aria-hidden="true">{{item.icon}}</i>{{item.name}}
           </a>
         </nav>
       </div>

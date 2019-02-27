@@ -18,6 +18,14 @@ const appRoutes: Routes = [
     loadChildren: './pages/login/login.module#LoginModule'
   },
   {
+    path: 'leaflet',
+    loadChildren: './pages/leaflet-map/leaflet-map.module#LeafletMapModule'
+  },
+  {
+    path: 'echarts',
+    loadChildren: './pages/echarts/echarts.module#EchartsModule'
+  },
+  {
     path: '**',
     loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundModule'
   }
