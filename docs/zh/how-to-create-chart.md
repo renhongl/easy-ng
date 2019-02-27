@@ -1,4 +1,5 @@
 
+# 如何使用Echarts创建chart
 
 1. 在你想使用的module中导入模块
     

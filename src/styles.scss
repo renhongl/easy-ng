@@ -1,14 +1,19 @@
 
 //Blox Material custom style
-
 $mdc-theme-primary: #c2185b;
 $mdc-theme-secondary: #018786;
 $mdc-theme-background: #fff;
 @import "material-components-web/material-components-web";
 
+//Material angular prebuild style
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
 //Material angular custom style
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
+// @include mat-core();
+// $app-primary: mat-palette($mat-indigo);
+// $app-accent:  mat-palette($mat-pink, A200, A100, A400);
+// $app-warn:    mat-palette($mat-red);
+// $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+// @include angular-material-theme($app-theme);
 
 //SDK global style
 html, body{
