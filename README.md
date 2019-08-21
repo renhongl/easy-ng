@@ -2,7 +2,12 @@
 
 [中文文档](./docs/zh/readme.md)
 
-The core strurcture of Angular.
+The easy way to start a angular project.
+
+# How To Start
+* Install packages: `npm install`
+* Start front-end develop server: `npm start`
+* Start json-server for test api: `npm run server`
 
 # Feature Including
 

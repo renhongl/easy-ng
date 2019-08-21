@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 // SDK modules
-import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 
 // International
@@ -21,8 +21,8 @@ registerLocaleData(en);
   ],
   imports: [
     BrowserModule,
-    CoreModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],

@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Auth } from '../../shared/shared.model';
+import { Auth } from '../../shared/global.model';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-page-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   password: string = '112233';
 
   constructor(
-    @Inject('authService') private authService,
+    private authService: AuthService,
     private route: Router
   ) { }
 
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   subscribeAuth(): void {
-    return this.authService.getAuth().subscribe((auth: Auth) => {
+    this.authService.getAuth().subscribe((auth: Auth) => {
       if (!auth.hasError) {
         this.gotAuth(auth);
       } else {
