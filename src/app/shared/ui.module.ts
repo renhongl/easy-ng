@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     RouterModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   exports: [
     CommonModule,
@@ -56,7 +58,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     RouterModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ]
 })
 export class UiModule { }

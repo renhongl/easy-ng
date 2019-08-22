@@ -11,8 +11,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  userName: string = 'feng';
-  password: string = '112233';
+  userName = 'feng';
+  password = '112233';
 
   constructor(
     private authService: AuthService,

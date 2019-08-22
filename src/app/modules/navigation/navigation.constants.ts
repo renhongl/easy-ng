@@ -15,26 +15,8 @@ export const linkList: Array<Link> = [
         group: 'favorite'
     },
     {
-        url: '/todo',
-        name: 'Complex Component Example',
-        icon: 'list',
-        group: 'favorite'
-    },
-    {
-        url: '/404',
-        name: '404 Example',
-        icon: 'warning',
-        group: 'favorite'
-    },
-    {
-        url: '/leaflet',
-        name: 'Leaflet Map Example',
-        icon: 'map',
-        group: 'secondary'
-    },
-    {
-        url: '/echarts',
-        name: 'Echarts Example',
+        url: '/modules',
+        name: 'Modules',
         icon: 'bar_chart',
         group: 'secondary'
     }

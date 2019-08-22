@@ -1,0 +1,16 @@
+.container{
+    width: 430px;
+    float: left;
+    margin: 10px;
+
+    .card{
+        width: 430px;
+        background: #fff;
+        color: #000;
+    }
+
+    #map{
+        width: 400px;
+        height: 400px;
+    }
+}

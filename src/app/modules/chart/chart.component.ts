@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { EChartOption } from 'echarts';
-import { EchartsExampleService } from '../../services/echarts-example.service';
+import { ChartService } from '../../services/chart.service';
 
 @Component({
-  selector: 'app-module-echarts-example',
-  templateUrl: './echarts-example.component.html',
-  styleUrls: ['./echarts-example.component.scss']
+  selector: 'app-module-chart',
+  templateUrl: './chart.component.html',
+  styleUrls: ['./chart.component.scss']
 })
-export class EchartsExampleComponent implements OnInit {
+export class ChartComponent implements OnInit {
 
   chartOption: EChartOption = {};
   updateOptions: EChartOption = {};
 
-  constructor(private echartsExampleService: EchartsExampleService) { }
+  constructor(private chartService: ChartService) { }
 
   ngOnInit() {
     this.loadChart();
@@ -20,7 +20,7 @@ export class EchartsExampleComponent implements OnInit {
   }
 
   loadChart(): void {
-    this.echartsExampleService.getChart().subscribe((result) => {
+    this.chartService.getChart().subscribe((result) => {
       this.updateOptions = {
         xAxis: {
           type: 'category',

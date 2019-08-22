@@ -1,0 +1,17 @@
+
+.container{
+    float: left;
+    width: 430px;
+    margin: 10px;
+
+    .card{
+        width: 430px;
+        background: #fff;
+        color: #000;
+    }
+
+    .demo-chart {
+        height: 400px;
+        width: 400px;
+    }
+}

@@ -9,6 +9,10 @@ const appRoutes: Routes = [
     loadChildren: './pages/home/home.module#HomeModule',
   },
   {
+    path: 'modules',
+    loadChildren: './pages/modules/modules.module#ModulesModule',
+  },
+  {
     path: 'login',
     loadChildren: './pages/login/login.module#LoginModule'
   },

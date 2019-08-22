@@ -1,0 +1,10 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>Chart</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div echarts [options]="chartOption" class="demo-chart" [loading]="true" [merge]="updateOptions"></div>
+    </mat-card-content>
+  </mat-card>
+</div>

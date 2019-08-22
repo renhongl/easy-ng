@@ -15,11 +15,12 @@ $mdc-theme-background: #fff;
 // $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // @include angular-material-theme($app-theme);
 
-//SDK global style
+//global style
 html, body{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     color: #000;
+    background-color: #e6e6e6 !important;
 }

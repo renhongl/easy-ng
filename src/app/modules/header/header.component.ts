@@ -39,6 +39,8 @@ export class HeaderComponent implements OnInit {
 
   token: string = window.sessionStorage.getItem('ng-sdk-token');
 
+  date: string;
+
   constructor(
     private authService: AuthService,
     private navControl: NavControlService,
@@ -47,6 +49,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.subscribeAuth();
+    this.date = new Date().toISOString();
   }
 
   onClickAuth(link: Link): void {

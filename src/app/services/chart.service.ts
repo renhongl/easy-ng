@@ -7,7 +7,7 @@ import { chartUrl } from '../shared/global.constants';
 @Injectable({
   providedIn: 'root'
 })
-export class EchartsExampleService {
+export class ChartService {
 
   private chartUrl = chartUrl;
 

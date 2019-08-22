@@ -1,0 +1,30 @@
+
+.selected-nav{
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    background: #0a3061;
+    position: relative;
+    margin-left: 20px;
+    overflow: hidden;
+
+    .left-dot{
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 5px 5px #25c1da;
+        top: 50%;
+        left: 1px;
+    }
+
+    .right-dot{
+        width: 0;
+        height: 0;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 3px 3px #da2557;
+        top: 50%;
+        right: 13px;
+    }
+}

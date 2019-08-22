@@ -18,18 +18,6 @@
       "id": "2lenuDX"
     }
   ],
-  "todo": [
-    {
-      "id": "0001",
-      "text": "something to do",
-      "finished": false
-    },
-    {
-      "id": "0002",
-      "text": "second thing to do",
-      "finished": false
-    }
-  ],
   "chart": {
     "finished": [10, 5, 7, 8, 9],
     "unFinished": [5, 3, 1, 2, 4],

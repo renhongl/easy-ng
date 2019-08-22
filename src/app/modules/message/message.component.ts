@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { Auth, Message } from '../../shared/global.model';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-module-message',
@@ -9,7 +10,7 @@ import { Auth, Message } from '../../shared/global.model';
 })
 export class MessageComponent implements OnInit {
 
-  constructor(private notification: NzNotificationService, @Inject('authService') private authService) { }
+  constructor(private notification: NzNotificationService, private authService: AuthService) { }
 
   ngOnInit() {
     this.subscribeAuth();

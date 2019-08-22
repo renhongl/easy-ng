@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { HomeRoutingModule } from './modules-routing.module';
+import { ModulesComponent } from './modules.component';
 import { UiModule } from '../../shared/ui.module';
 import { HeaderModule } from '../../modules/header/header.module';
 import { NavigationModule } from '../../modules/navigation/navigation.module';
@@ -10,7 +10,7 @@ import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
-    HomeComponent,
+    ModulesComponent,
   ],
   imports: [
     UiModule,
@@ -22,7 +22,7 @@ import { ComponentsModule } from '../../components/components.module';
     MapModule
   ],
   exports: [
-    HomeComponent
+    ModulesComponent
   ]
 })
-export class HomeModule { }
+export class ModulesModule { }
